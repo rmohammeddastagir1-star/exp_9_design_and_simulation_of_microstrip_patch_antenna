@@ -106,4 +106,69 @@ This experiment uses the **inset microstrip line feed** (or coaxial probe feed, 
    - Assign the outer faces of the air box as a **Radiation Boundary**.
 8. **Set up the analysis:**
    - Add a **Solution Setup** with the solution frequency equal to f_r.
-   - Add a **Frequency Swe
+   - Add a **Frequency Sweep** (Interpolating/Fast) covering the band of interest.
+9. **Add far-field reports:**
+   - Insert a **Far Field Setup** (Infinite Sphere) for the 2-D and 3-D radiation patterns.
+10. **Validate and run the simulation** (Validation Check → Analyze All).
+11. **Post-process the results:**
+    - Plot **S11 (return loss)** vs frequency and note the resonant frequency and −10 dB bandwidth.
+    - Plot **VSWR** vs frequency.
+    - Plot the **2-D E-plane and H-plane** radiation patterns and the **3-D gain pattern**.
+    - Note the **gain**, **directivity** and **radiation efficiency** at resonance.
+
+---
+
+## Observations
+
+<img width="1917" height="897" alt="image" src="https://github.com/user-attachments/assets/07a4bcad-4fc8-4d85-b929-7529c9863837" />
+
+<img width="1623" height="661" alt="image" src="https://github.com/user-attachments/assets/38bef60b-5932-4c12-8b6a-795bd0aac8df" />
+
+<img width="1917" height="782" alt="image" src="https://github.com/user-attachments/assets/a79d8083-218b-40f9-bf9f-41217e5ce105" />
+
+
+
+### Graphs
+
+
+* S11 vs frequency
+<img width="1621" height="662" alt="image" src="https://github.com/user-attachments/assets/4b997a82-bed7-4740-bf5f-6b23029c29c3" />
+
+
+
+* VSWR vs frequency
+<img width="1623" height="662" alt="image" src="https://github.com/user-attachments/assets/4826ec27-b2d7-413d-bb43-74a64b9940d9" />
+
+
+
+* 2-D E-plane and H-plane radiation patterns
+<img width="1620" height="657" alt="image" src="https://github.com/user-attachments/assets/43f3add5-195b-454f-bc9d-2f7617695d2a" />
+
+
+
+
+---
+
+## Precautions
+
+1. Ensure the air box / radiation boundary is at least λ/4 away from the patch structure on all sides.
+2. Use a fine mesh near the feed point and patch edges for accurate convergence.
+3. Verify the substrate material properties (ε_r, loss tangent, thickness) before running the simulation.
+4. Check the port impedance and de-embedding settings before reading S11/VSWR values.
+5. Validate the geometry (no overlapping or unassigned boundaries) before analysis.
+
+## Result
+
+Resonant Frequency = 2.4GHz  
+
+Return loss = -25dB
+
+VSWR = 1.12
+
+Gain = 6.5DBI
+
+
+## Conclusion
+
+A rectangular microstrip patch antenna was designed and simulated at 2.4 GHz using Ansys HFSS.
+
